@@ -1,0 +1,399 @@
+/* Streamlit HRMS - Modern Professional UI */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+:root {
+  --primary: #4CAF50;
+  --primary-dark: #388E3C;
+  --secondary: #2196F3;
+  --background: #f0f2f6;
+  --surface: #ffffff;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.06);
+  --radius: 10px;
+  --radius-sm: 8px;
+  --radius-lg: 14px;
+}
+
+/* Base */
+.main .block-container {
+  padding-top: 1.25rem;
+  padding-bottom: 1.5rem;
+  max-width: 1200px;
+}
+
+/* Metric cards - modern flat cards */
+.stMetric, [data-testid="stMetric"] {
+  background: var(--surface);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stMetric:hover, [data-testid="stMetric"]:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+/* Buttons */
+.stButton > button {
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.stButton > button[kind="primary"] {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.stButton > button[kind="primary"]:hover {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.35);
+}
+
+/* ========== Sidebar - Premium modern nav ========== */
+[data-testid="stSidebar"] {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border-right: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.04);
+  min-width: 260px;
+}
+
+[data-testid="stSidebar"] > div:first-child {
+  padding: 1.25rem 1rem 1rem;
+}
+
+[data-testid="stSidebar"] .stMarkdown {
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+/* Sidebar logo block */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding-bottom: 1rem;
+}
+
+.sidebar-logo i { color: #4CAF50; font-size: 1.4rem; }
+.sidebar-logo span { font-size: 1.05rem; font-weight: 700; color: #1e293b; letter-spacing: -0.02em; }
+
+/* User card in sidebar */
+.sidebar-user-card {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 1px solid rgba(76, 175, 80, 0.2);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0 1rem;
+}
+
+.sidebar-user-card .name { font-weight: 600; color: #1e293b; font-size: 0.95rem; }
+.sidebar-user-card .role { font-size: 0.75rem; color: #4CAF50; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+
+/* option_menu overrides for modern nav */
+[data-testid="stSidebar"] .css-1r6slb0,
+[data-testid="stSidebar"] [data-testid="stSidebarContent"] > div > div {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+[data-testid="stSidebar"] .stButton > button {
+  width: 100%;
+  border-radius: 8px;
+  font-weight: 500;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #f8fafc;
+  color: #475569;
+}
+
+[data-testid="stSidebar"] .stButton > button:hover {
+  background: #f1f5f9;
+  border-color: rgba(76, 175, 80, 0.3);
+  color: #1e293b;
+}
+
+/* Notification link style in sidebar */
+.sidebar-notif {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #64748b;
+  padding: 0.5rem 0;
+}
+
+.sidebar-notif.has-unread { color: #1e293b; font-weight: 500; }
+.sidebar-notif i { color: #4CAF50; }
+.sidebar-notif .badge {
+  background: #ef4444;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* Chart containers - card style */
+.dashboard-chart-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,0.06);
+  margin-bottom: 1.25rem;
+}
+
+.dashboard-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Plotly chart wrapper */
+.js-plotly-plot .plotly .main-svg { border-radius: 8px; }
+.stPlotlyChart { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+
+/* Headers */
+h1, h2, h3 {
+  color: var(--text) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em;
+}
+
+/* Expander */
+.streamlit-expanderHeader {
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Dataframes and tables */
+[data-testid="stDataFrame"] {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* ========== Employee Listing page ========== */
+.page-emp-listing { display: none; }
+
+/* Toolbar: row with Add / Department / Role buttons */
+.main:has(.page-emp-listing) .emp-toolbar-wrap + div {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: var(--shadow);
+}
+
+.main:has(.page-emp-listing) .emp-toolbar-wrap + div .stButton > button {
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.main:has(.page-emp-listing) .emp-toolbar-wrap + div .stButton > button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.emp-listing-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.emp-listing-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e293b;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.emp-listing-title i { color: #4CAF50; margin-right: 8px; }
+
+.emp-listing-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.emp-action-toolbar {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.emp-table-section {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 1.25rem 0 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(76, 175, 80, 0.25);
+}
+
+.emp-table-section i { color: #4CAF50; margin-right: 8px; }
+
+.emp-empty-state {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: var(--radius);
+  border: 1px dashed rgba(0,0,0,0.12);
+}
+
+.emp-empty-state i { font-size: 2.5rem; color: #94a3b8; margin-bottom: 0.75rem; display: block; }
+.emp-empty-state p { color: #64748b; font-size: 0.95rem; margin: 0 0 0.5rem; }
+.emp-empty-state .hint { font-size: 0.85rem; color: #94a3b8; }
+
+
+/* Input fields */
+.stTextInput > div > div > input,
+.stNumberInput > div > div > input {
+  border-radius: var(--radius-sm) !important;
+  border: 1px solid rgba(0,0,0,0.12) !important;
+  font-size: 0.95rem !important;
+}
+
+.stTextInput > div > div > input:focus,
+.stNumberInput > div > div > input:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2) !important;
+}
+
+/* Selectbox */
+.stSelectbox > div > div {
+  border-radius: var(--radius-sm) !important;
+}
+
+/* Alerts */
+.stAlert {
+  border-radius: var(--radius-sm);
+}
+
+#MainMenu { visibility: hidden; }
+footer { visibility: hidden; }
+
+/* Notification list - unread/read indicator */
+.notif-unread { color: var(--primary); font-size: 0.5rem; margin-right: 0.5rem; vertical-align: middle; }
+.notif-read { color: var(--text-muted); font-size: 0.5rem; margin-right: 0.5rem; vertical-align: middle; }
+
+/* ========== Login / Register - Box card (narrow, centered) ========== */
+/* Constrain entire main area to a narrow column so the card is not wide */
+.main:has(.login-page-marker) {
+  max-width: 420px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+/* Card box: the block container that holds the form */
+.main:has(.login-page-marker) .block-container {
+  max-width: 100% !important;
+  margin: 2rem auto !important;
+  padding: 2rem 1.75rem !important;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-sizing: border-box !important;
+}
+
+/* Ensure Streamlit's outer wrapper doesn't force full width on login */
+section.main:has(.login-page-marker) {
+  max-width: 420px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.login-page-marker { display: none; }
+
+.login-logo {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.login-logo-icon {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 0.35rem;
+  line-height: 1;
+}
+
+.login-title {
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+  margin-bottom: 0.15rem !important;
+  letter-spacing: -0.02em;
+}
+
+.login-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.main:has(.login-page-marker) .stTextInput input {
+  border-radius: var(--radius-sm) !important;
+  border: 1px solid rgba(0,0,0,0.12) !important;
+  padding: 0.45rem 0.65rem !important;
+  font-size: 0.9rem !important;
+}
+
+.main:has(.login-page-marker) .stButton > button {
+  width: 100% !important;
+  padding: 0.5rem 0.85rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  border-radius: var(--radius-sm) !important;
+  margin-top: 0.15rem !important;
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.main:has(.login-page-marker) .stButton > button:hover {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+  box-shadow: 0 2px 10px rgba(76, 175, 80, 0.35) !important;
+}
+
+.login-footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  margin-top: 1rem;
+}
